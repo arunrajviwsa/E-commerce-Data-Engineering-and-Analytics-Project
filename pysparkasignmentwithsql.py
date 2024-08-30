@@ -49,7 +49,11 @@ df_grouped = df.groupBy("product_category","Product_Subcategory").sum("Total_Sal
 df_grouped.show()
 
 # COMMAND ----------
-
+#Calculateaggregates such as total sales per category and customer segmentation.
+#Analyzethe distribution of sales across different product categories andsubcategories.
+#Identify the top 5 best-selling products and the top 5 least-selling products.
+#Visualize the monthly sales trends and identify any seasonal patterns.
+#Analyze customer purchasing behavior by location and payment method.
 
 from pyspark.sql import functions as F
 df_grouped = df.groupBy("product_category","Product_Subcategory").agg(F.sum("Total_Sales").alias("TotalSales"))
@@ -61,6 +65,7 @@ df_orderedmonth = df_groupedMonth.orderBy(F.col("Transaction_month").asc())
 df_orderedLeast.show(5)
 df_ordered.show(5)
 df_orderedmonth.show()
+
 df_groupedLocation.show()
 df_ordered.show(1)
 
@@ -84,7 +89,7 @@ df_filtered.show()
 df_cleaned.show()
 
 # COMMAND ----------
-
+#Write queries to extract insights such as top-performing products, sales trends, and customer behavior.
 # MAGIC %sql
 # MAGIC
 # MAGIC
